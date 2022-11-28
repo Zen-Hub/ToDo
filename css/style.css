@@ -4,16 +4,15 @@ body{
 
 .ansvers-container{
     display: grid;
-    min-width: 100px;
+    min-width: 150px;
     min-height: 200px;
     border: 1px solid teal;
 }
-.questOne {
-    border: 1px solid rgb(235, 87, 19);
+.styleInp {
+    border: 2px solid rgb(138, 178, 229);
+    max-width: 150px;
+    max-height: 40px;
+    margin: 25px 0px 0 25px ;
 
 }
 
-.questTwo {
-    border: 1px solid rgb(235, 87, 19);
-
-}
