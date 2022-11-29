@@ -1,7 +1,10 @@
-let numFilms = ''
-let questionOne = ''
-let questionTwo = ''
+console.log("WORK")
 
+let numFilms = ''
+let inpQuestionOne = document.querySelector('.inpQsOne').value
+console.log(inpQuestionOne.innerHTML)
+let inpQuestionTwo = document.querySelector('.inpQsTwo')
+ 
 let personalMov = {
     count: "",
     movies: {},
@@ -9,3 +12,4 @@ let personalMov = {
     genres: [],
     privat: false
 }
+
