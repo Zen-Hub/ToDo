@@ -9,10 +9,16 @@ body{
     border: 1px solid teal;
 }
 .styleInp {
-    border: 2px solid rgb(138, 178, 229);
+    
     max-width: 150px;
     max-height: 40px;
     margin: 25px 0px 0 25px ;
+    border: 2px solid rgb(138, 178, 229);
 
 }
 
+.btnStyle{
+    max-width: 55px;
+    height: 25px;
+    border: 1px solid teal;
+}
