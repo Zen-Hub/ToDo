@@ -7,6 +7,13 @@ let inpQuestionTwo = document.querySelector('.inpQsTwo')
 
 
 let btnOne = document.querySelector('.btn_1')
+let btnQuestion = document.querySelector('.btnQuest')
+
+let getQuestion  =()=>{
+    document.innerHTML = 'what movies'
+}
+
+btnQuestion.onclick =()=>{getQuestion()}
 
 
 let personalMov = {
