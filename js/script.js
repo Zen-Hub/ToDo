@@ -4,6 +4,7 @@ let numFilms = ''
 
 let divQsOne = document.querySelector('.questionOne')
 
+
 let inpQuestionOne = document.querySelector('.inpQsOne')
 let inpQuestionTwo = document.querySelector('.inpQsTwo')
 
@@ -13,12 +14,24 @@ let btnQuestion = document.querySelector('.btnQuest')
 
 let arrQst = ['what movies', 'your rating', 'your favorite movie?']
 
+console.log(arrQst.length)
+
+let sum = 0
 
 btnQuestion.onclick = () => {
 
-    for (let i = 0; i < 3; i++) {
-        divQsOne.innerHTML = arrQst[i]
+
+    for (let i = 0; i <= arrQst.length; i++) {
+        divQsOne.innerHTML = arrQst[sum]
+
     }
+
+    if(sum < arrQst.length-1 ){
+        sum++
+    }else {sum=0}
+
+
+    console.log(sum)
 }
 
 
@@ -36,6 +49,9 @@ btnOne.addEventListener("click", () => {
     let inpValTwo = inpQuestionTwo.value
     personalMov.movies[`${inpValOne}`] = `${inpValTwo}`
 
+    divQsOne.innerHTML = ''
+
     console.log(personalMov)
 
 })
+
