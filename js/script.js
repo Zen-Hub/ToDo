@@ -45,6 +45,10 @@ let personalMov = {
 
 
 btnOne.addEventListener("click", () => {
+    if(inpQuestionOne.value== ''){
+        inpQuestionOne.placeholder = '...empty',
+        inpQuestionOne.style.backgroundColor = '#ECEABE'
+    }
     let inpValOne = inpQuestionOne.value
     let inpValTwo = inpQuestionTwo.value
     personalMov.movies[`${inpValOne}`] = `${inpValTwo}`
