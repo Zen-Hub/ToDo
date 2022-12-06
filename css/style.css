@@ -2,22 +2,22 @@ body{
     font-family: Roboto, Montserrat;
 }
 
-.ansvers-container{
+.ansvers-container__inputs{
     display: grid;
     min-width: 150px;
     min-height: 200px;
-    border: 1px solid teal;
+    border: 1px solid rgb(209, 223, 223);
+    
 }
 
-.ansvers-container__inputs{
-    display: grid;
-}
+
 .styleInp {
     max-width: 150px;
     max-height: 40px;
     margin: 25px 0px 0 25px;
     padding: 5px;
     border: 2px solid rgb(138, 178, 229);
+    border-radius: 5px;
 
 }
 
@@ -26,6 +26,7 @@ body{
     height: 25px;
     margin: 25px 0px 10px 25px;
     border: 1px solid teal;
+    border-radius: 5px;
 }
 
 .btnStyle:hover{
@@ -35,10 +36,15 @@ body{
 
 
 .styleBlockQst{
-    max-width: 200px;
-    max-height: 40px;
+    max-width: 150px;
+    min-height: 30px;
     margin: 25px 0px 10px 25px;
     padding: 5px;
+    background-color: rgb(178, 214, 211);
+    border-radius: 5px;
     
-    
+}
+
+.error{
+    background-color: rgb(21, 230, 212);
 }
