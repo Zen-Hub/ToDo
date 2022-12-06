@@ -1,40 +1,12 @@
+'use strict'
+
 console.log("WORK")
 
-let numFilms = ''
-
 let divQsOne = document.querySelector('.questionOne')
-
-
 let inpQuestionOne = document.querySelector('.inpQsOne')
-let inpQuestionTwo = document.querySelector('.inpQsTwo')
-
-
-let btnOne = document.querySelector('.btn_1')
-let btnQuestion = document.querySelector('.btnQuest')
-
+let btnStart = document.querySelector('.btnStart')
+let btnPush = document.querySelector('.btnPush')
 let arrQst = ['what movies', 'your rating', 'your favorite movie?']
-
-console.log(arrQst.length)
-
-let sum = 0
-
-btnQuestion.onclick = () => {
-
-
-    for (let i = 0; i <= arrQst.length; i++) {
-        divQsOne.innerHTML = arrQst[sum]
-
-    }
-
-    if(sum < arrQst.length-1 ){
-        sum++
-    }else {sum=0}
-
-
-    console.log(sum)
-}
-
-
 let personalMov = {
     count: "",
     movies: {},
@@ -43,19 +15,39 @@ let personalMov = {
     privat: false
 }
 
+//start questions
+let sum = 0
 
-btnOne.addEventListener("click", () => {
-    if(inpQuestionOne.value== ''){
+btnStart.onclick = () => {
+    inpQuestionOne.value = ''
+
+    for (let i = 0; i <= arrQst.length; i++) {
+        divQsOne.innerHTML = arrQst[sum]
+
+    }
+
+    if (sum < arrQst.length - 1) {
+        sum++
+    } else { sum = 0 }
+
+
+    console.log(sum)
+}
+
+//push ansvers
+btnPush.addEventListener("click", () => {
+    if (inpQuestionOne.value == '') {
         inpQuestionOne.placeholder = '...empty',
-        inpQuestionOne.style.backgroundColor = '#ECEABE'
+            inpQuestionOne.style.backgroundColor = '#ECEABE'
     }
     let inpValOne = inpQuestionOne.value
-    let inpValTwo = inpQuestionTwo.value
+
     personalMov.movies[`${inpValOne}`] = `${inpValTwo}`
 
     divQsOne.innerHTML = ''
 
-    console.log(personalMov)
+    inpQuestionOne.value = ''
 
 })
+
 
