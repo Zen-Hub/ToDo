@@ -4,7 +4,6 @@ console.log("WORK")
 
 let divQsOne = document.querySelector('.questionOne')
 let inpQuestionOne = document.querySelector('.inpQsOne')
-let inpValOne = inpQuestionOne.value
 let btnStart = document.querySelector('.btnStart')
 let btnPush = document.querySelector('.btnPush')
 let arrQst = ['what movies', 'your rating', 'your favorite movie?']
@@ -31,7 +30,7 @@ btnStart.onclick = () => {
         sum++
     } else { sum = 0 }
 
-    funcAddObj(inpValOne)
+    
 
     console.log(sum)
 }
@@ -46,16 +45,17 @@ btnPush.addEventListener("click", () => {
 
    
 
-    divQsOne.innerHTML = ''
+   funcAddObj()
+
+   divQsOne.innerHTML = ''
    
-    inpQuestionOne.value = ''
+   inpQuestionOne.value = ''
     
 })
 
-function funcAddObj(inpValOne){
-    objPersonalMov.movies[divQsOne.innerHTML] = inpValOne
+function funcAddObj(){
+    objPersonalMov.movies[divQsOne.innerHTML] = inpQuestionOne.value
     
     console.log(objPersonalMov)
 }
-
 
