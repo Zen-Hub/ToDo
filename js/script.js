@@ -3,6 +3,7 @@
 console.log("WORK")
 
 let divQsOne = document.querySelector('.questionOne')
+let divAnsversWatch = document.querySelector('.ansversWatch')
 let inpQuestionOne = document.querySelector('.inpQsOne')
 let btnStart = document.querySelector('.btnStart')
 let btnPush = document.querySelector('.btnPush')
@@ -58,4 +59,6 @@ function funcAddObj(){
     
     console.log(objPersonalMov)
 }
+
+divAnsversWatch.innerHTML = Object.keys(objPersonalMov)
 
