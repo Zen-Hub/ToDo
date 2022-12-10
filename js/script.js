@@ -60,5 +60,17 @@ function funcAddObj(){
     console.log(objPersonalMov)
 }
 
-divAnsversWatch.innerHTML = Object.keys(objPersonalMov)
+//check privat
+function funcCheskPrivat(){
+    if(objPersonalMov.privat==false){
+        console.log(objPersonalMov)
+    }
+}
+funcCheskPrivat()
+
+//objPersonalMov.genres
+function funcQuestion(){
+
+}
+
 
