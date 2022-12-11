@@ -8,6 +8,7 @@ let inpQuestionOne = document.querySelector('.inpQsOne')
 let btnStart = document.querySelector('.btnStart')
 let btnPush = document.querySelector('.btnPush')
 let arrQst = ['what movies', 'your rating', 'your favorite movie?']
+let arrGenres = []
 let objPersonalMov = {
     count: "",
     movies: {},
@@ -70,7 +71,6 @@ funcCheskPrivat()
 
 //objPersonalMov.genres
 function funcQuestion(){
-
+    arrGenres.push()
 }
-
 
