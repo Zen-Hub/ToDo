@@ -4,16 +4,18 @@ console.log("WORK")
 
 let divQsOne = document.querySelector('.questionOne')
 let divAnsversWatch = document.querySelector('.ansversWatch')
+let divQuestionRating = document.querySelector('.questionRating')
+
 let inpQuestionOne = document.querySelector('.inpQsOne')
 let btnStart = document.querySelector('.btnStart')
 let btnPush = document.querySelector('.btnPush')
-let arrQst = ['what movies', 'your rating', 'your favorite movie?']
-let arrGenres = []
+let arrQst = ['what your like genre?', 'what your favorite movie?', 'your favorite actor?']
+let arrGenres = ['what your rating?', 'what your rating?', 'what your rating?']
 let objPersonalMov = {
     count: "",
     movies: {},
     actors: {},
-    genres: [],
+    rating: [],
     privat: false
 }
 
@@ -69,8 +71,13 @@ function funcCheskPrivat(){
 }
 funcCheskPrivat()
 
-//objPersonalMov.genres
+//objPersonalMov.rating
+let sumRating = 0
 function funcQuestion(){
-    arrGenres.push()
-}
 
+    for(let i = 0; i < arrGenres.length; i++){
+        divQuestionRating.innerHTML = arrGenres[sumRating] + `${i}`
+    }
+   
+}
+funcQuestion()
