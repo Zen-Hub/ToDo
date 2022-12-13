@@ -78,6 +78,10 @@ function funcQuestion(){
     for(let i = 0; i < arrGenres.length; i++){
         divQuestionRating.innerHTML = arrGenres[sumRating] + `${i}`
     }
+
+    if(sumRating>=arrGenres.length){
+        sumRating++
+    }else{sumRating=0}
    
 }
 funcQuestion()
