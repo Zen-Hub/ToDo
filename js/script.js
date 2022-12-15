@@ -4,13 +4,15 @@ console.log("WORK")
 
 let divQsOne = document.querySelector('.questionOne')
 let divAnsversWatch = document.querySelector('.ansversWatch')
-let divQuestionRating = document.querySelector('.questionRating')
+let  divQuestionarrView = document.querySelector('.questionRating')
 
 let inpQuestionOne = document.querySelector('.inpQsOne')
+let inpView = document.querySelector('.inpView')
 let btnStart = document.querySelector('.btnStart')
 let btnPush = document.querySelector('.btnPush')
+let btnPushView = document.querySelector('.btnPushView')
 let arrQst = ['how many comedies have you watched?', 'how many sci-fi have been watched?', 'how many viewed mystics?']
-let arrGenres = ['longest view?', 'longest view?', 'longest view?']
+let arrView = ['longest view?', 'longest view?', 'longest view?']
 let objPersonalMov = {
     count: "",
     movies: {},
@@ -51,7 +53,7 @@ btnPush.addEventListener("click", () => {
 
    funcAddObj()
 
-   funcQuestion()
+   funcarrView()
 
    divQsOne.innerHTML = ''
    
@@ -76,13 +78,13 @@ funcCheskPrivat()
 
 //objPersonalMov.rating
 let sumRating = 0
-function funcQuestion(){
+function funcarrView(){
 
-    for(let i = 0; i < arrGenres.length; i++){
-        divQuestionRating.innerHTML = arrGenres[sumRating] 
+    for(let i = 0; i < arrView.length; i++){
+        divQuestionarrView.innerHTML = arrView[sumRating] 
     }
 
-    if(sumRating<arrGenres.length-1){
+    if(sumRating<arrView.length-1){
         sumRating++
     }else{sumRating=0}
 
@@ -90,4 +92,8 @@ function funcQuestion(){
    
 }
 
-//add second input // add all in object
+btnPushView.onclick=()=>{
+    objPersonalMov.view.push(inpView.value)
+
+    console.log(objPersonalMov.view)
+}
