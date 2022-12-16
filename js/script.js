@@ -58,6 +58,7 @@ btnPush.addEventListener("click", () => {
    divQsOne.innerHTML = ''
    
    inpQuestionOne.value = ''
+   
     
 })
 
@@ -94,6 +95,6 @@ function funcarrView(){
 
 btnPushView.onclick=()=>{
     objPersonalMov.view.push(inpView.value)
-
+    inpView.value = ''
     console.log(objPersonalMov.view)
 }
