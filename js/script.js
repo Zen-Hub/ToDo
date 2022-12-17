@@ -4,7 +4,7 @@ console.log("WORK")
 
 let divQsOne = document.querySelector('.questionOne')
 let divAnsversWatch = document.querySelector('.ansversWatch')
-let  divQuestionarrView = document.querySelector('.questionRating')
+let  divQuestionarrView = document.querySelector('.questionView')
 
 let inpQuestionOne = document.querySelector('.inpQsOne')
 let inpView = document.querySelector('.inpView')
@@ -97,4 +97,10 @@ btnPushView.onclick=()=>{
     objPersonalMov.view.push(inpView.value)
     inpView.value = ''
     console.log(objPersonalMov.view)
+}
+
+
+function createDivDo(){
+    let divDo = document.createElement('div')
+    console.log(divDo)
 }
