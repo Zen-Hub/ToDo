@@ -3,7 +3,7 @@ body{
     background-color: #1F2833 ;
 }
 
-.ansvers-container__inputs{
+.todo__container_inputs{
     display: grid;
     min-width: 150px;
     min-height: 200px;
@@ -28,9 +28,10 @@ input:focus{
 }
 
 .btnStyle{
-    max-width: 55px;
-    height: 25px;
+    max-width: 120px;
+    height: 35px;
     margin: 25px 0px 10px 25px;
+    padding: 5px 15px ;
     color: rgb(67, 175, 175);
     border: 1px solid teal;
     border-radius: 5px;
@@ -43,8 +44,8 @@ input:focus{
 }
 
 
-.styleBlockQst{
-    max-width: 200px;
+.divTodo{
+    min-width: 200px;
     min-height: 30px;
     margin: 25px 0px 10px 25px;
     padding: 5px;
