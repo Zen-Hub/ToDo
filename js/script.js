@@ -1,7 +1,7 @@
 'use strict'
 
 console.log("WORK")
-
+let container = document.querySelector('.todo__container')
 let divQsOne = document.querySelector('.questionOne')
 let divAnsversWatch = document.querySelector('.ansversWatch')
 let divQuestionarrView = document.querySelector('.questionView')
@@ -32,6 +32,7 @@ btnBeginTodo.onclick = () => {
 
 
 
+
 }
 // input clear
 function clearInp() {
@@ -54,10 +55,12 @@ btnAddTodo.onclick = () => {
     let divDo = document.createElement('div')
     divDo.classList.add('divTodo')
 
-    btnAddTodo.append(divDo)
+    container.append(divDo)
     divDo.innerHTML = inpTodo.value
 
     objPersonalMov.movies[divDo.innerHTML] = inpTodo.value
+
+    inpTodo.value = ''
 
     console.log(objPersonalMov)
 
@@ -68,7 +71,7 @@ btnAddTodo.onclick = () => {
 btnAddTodo.addEventListener("click", () => {
     if (inpTodo.value == '') {
         inpTodo.placeholder = '...empty',
-            inpTodo.style.backgroundColor = '#ECEABE'
+            inpTodo.style.backgroundColor = '#1F2833'
     }
 })
 
