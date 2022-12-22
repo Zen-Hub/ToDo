@@ -15,50 +15,45 @@ let btnAddTodo = document.querySelector('.btnAddTodo')
 
 let objPersonalMov = {
     count: "",
-    movies: {},
+    todo: {},
     actors: {},
     view: [],
     privat: false
 }
 
-//create todo
-btnBeginTodo.onclick = () => {
 
-
-    inpTodo.value = 'create todo'
-
-    setTimeout(clearInp, 1000)
-
-
-
-
-
-}
-// input clear
-function clearInp() {
-    inpTodo.style.backgroundColor = '#003153'
-    inpTodo.value = ''
-
-}
-
-
+//check inp + color
 inpTodo.addEventListener("click", () => {
     if (inpTodo.focus) {
         inpTodo.style.backgroundColor = '#003153'
     } else { inpTodo.style.backgroundColor = '#3E5F8A' }
 })
 
+//check inp value
+btnAddTodo.addEventListener("click", () => {
+    if (inpTodo.value == '') {
+
+        inpTodo.style.backgroundColor = 'rgb(67, 175, 175)'
+    }
+})
 
 //add todo
 let divDo
+let numTodo = 1
 btnAddTodo.onclick = () => {
+    if (inpTodo.value == '') {
+
+        return
+    }
+
     let divDo = document.createElement('div')
     divDo.classList.add('divTodo')
 
     container.append(divDo)
+
     divDo.innerHTML = inpTodo.value
 
-    objPersonalMov.movies[divDo.innerHTML] = inpTodo.value
+    objPersonalMov.todo[numTodo++] = inpTodo.value
 
     inpTodo.value = ''
 
@@ -66,14 +61,30 @@ btnAddTodo.onclick = () => {
 
 }
 
+//https://learn.javascript.ru/localstorage
 
-//push todo
-btnAddTodo.addEventListener("click", () => {
-    if (inpTodo.value == '') {
-        inpTodo.placeholder = '...empty',
-            inpTodo.style.backgroundColor = '#1F2833'
-    }
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
