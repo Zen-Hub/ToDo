@@ -61,7 +61,35 @@ btnAddTodo.onclick = () => {
 
 }
 
+function addLockalSt(){
+    
+}
+
 //https://learn.javascript.ru/localstorage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
