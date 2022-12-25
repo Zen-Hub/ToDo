@@ -40,6 +40,12 @@ btnAddTodo.addEventListener("click", () => {
 //add todo
 let divDo
 let numTodo = 1
+
+let divInner
+let inpValue
+
+
+
 btnAddTodo.onclick = () => {
     if (inpTodo.value == '') {
 
@@ -53,7 +59,17 @@ btnAddTodo.onclick = () => {
 
     divDo.innerHTML = inpTodo.value
 
+    divInner =  divDo.innerHTML
+
+    inpValue = inpTodo.value
+
     objPersonalMov.todo[numTodo++] = inpTodo.value
+
+    localStorage.setItem('todoLs',JSON.stringify(objPersonalMov))
+
+   if(localStorage.getItem())
+
+    
 
     inpTodo.value = ''
 
@@ -61,75 +77,10 @@ btnAddTodo.onclick = () => {
 
 }
 
-function addLockalSt(){
-    
-}
+// function addLockalSt(){
+//     localStorage.todo =JSON.stringify({ divInner : inpValue}) 
+//     console.log()
+//     localStorage.setItem('todo')
+// }
 
 //https://learn.javascript.ru/localstorage
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
