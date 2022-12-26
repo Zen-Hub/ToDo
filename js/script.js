@@ -54,22 +54,20 @@ btnAddTodo.onclick = () => {
 
     let divDo = document.createElement('div')
     divDo.classList.add('divTodo')
-
     container.append(divDo)
 
     divDo.innerHTML = inpTodo.value
 
-    divInner =  divDo.innerHTML
-
-    inpValue = inpTodo.value
 
     objPersonalMov.todo[numTodo++] = inpTodo.value
 
-    localStorage.setItem('todoLs',JSON.stringify(objPersonalMov))
+    localStorage.setItem('keyLockalTodo', JSON.stringify(objPersonalMov))
 
-   if(localStorage.getItem())
+    if (localStorage.getItem()){
 
-    
+    }
+
+
 
     inpTodo.value = ''
 
@@ -78,9 +76,10 @@ btnAddTodo.onclick = () => {
 }
 
 // function addLockalSt(){
-//     localStorage.todo =JSON.stringify({ divInner : inpValue}) 
+//     localStorage.todo =JSON.stringify({ divInner : inpValue})
 //     console.log()
 //     localStorage.setItem('todo')
 // }
 
 //https://learn.javascript.ru/localstorage
+
