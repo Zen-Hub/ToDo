@@ -12,6 +12,11 @@ let btnBeginTodo = document.querySelector('.btnBeginTodo')
 let btnAddTodo = document.querySelector('.btnAddTodo')
 
 
+let divDo = document.createElement('div')
+divDo.classList.add('divTodo')
+container.append(divDo)
+
+addLockalSt()
 
 let objPersonalMov = {
     count: "",
@@ -38,12 +43,8 @@ btnAddTodo.addEventListener("click", () => {
 })
 
 //add todo
-let divDo
+
 let numTodo = 1
-
-let divInner
-let inpValue
-
 
 
 btnAddTodo.onclick = () => {
@@ -52,34 +53,26 @@ btnAddTodo.onclick = () => {
         return
     }
 
-    let divDo = document.createElement('div')
-    divDo.classList.add('divTodo')
-    container.append(divDo)
+    
+    
+    
 
     divDo.innerHTML = inpTodo.value
 
 
-    objPersonalMov.todo[numTodo++] = inpTodo.value
+    objPersonalMov.todo['key'] = inpTodo.value
 
-    localStorage.setItem('keyLockalTodo', JSON.stringify(objPersonalMov))
+    localStorage.setItem('keyLockalTodo', JSON.stringify(objPersonalMov.todo.key))
 
-    if (localStorage.getItem()){
-
-    }
-
-
-
+   
+    
     inpTodo.value = ''
 
     console.log(objPersonalMov)
-
 }
 
-// function addLockalSt(){
-//     localStorage.todo =JSON.stringify({ divInner : inpValue})
-//     console.log()
-//     localStorage.setItem('todo')
-// }
 
-//https://learn.javascript.ru/localstorage
-
+function addLockalSt(){
+    divDo.innerHTML = localStorage.getItem('keyLockalTodo')
+    console.log(localStorage.getItem('keyLockalTodo'))
+}
