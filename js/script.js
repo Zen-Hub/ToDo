@@ -14,7 +14,7 @@ let btnAddTodo = document.querySelector('.btnAddTodo')
 
 let divDo = document.createElement('div')
 divDo.classList.add('divTodo')
-container.append(divDo)
+
 
 addLockalSt()
 
@@ -54,7 +54,7 @@ btnAddTodo.onclick = () => {
     }
 
     
-    
+    container.append(divDo)
     
 
     divDo.innerHTML = inpTodo.value
@@ -73,6 +73,11 @@ btnAddTodo.onclick = () => {
 
 
 function addLockalSt(){
-    divDo.innerHTML = localStorage.getItem('keyLockalTodo')
+    if(localStorage.getItem('keyLockalTodo')){
+        divDo.innerHTML = localStorage.getItem('keyLockalTodo'),
+        container.append(divDo)
+
+    }
+    
     console.log(localStorage.getItem('keyLockalTodo'))
 }
