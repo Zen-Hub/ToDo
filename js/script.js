@@ -53,19 +53,21 @@ btnAddTodo.onclick = () => {
         return
     }
 
-    
+    divDo = document.createElement('div')
+    divDo.classList.add('divTodo')
     container.append(divDo)
     
 
     divDo.innerHTML = inpTodo.value
 
 
-    objPersonalMov.todo['key'] = inpTodo.value
+    objPersonalMov.todo[numTodo] = inpTodo.value
 
-    localStorage.setItem('keyLockalTodo', JSON.stringify(objPersonalMov.todo.key))
+    numTodo++
+
+    localStorage.setItem('keyLockalTodo', JSON.stringify(objPersonalMov.todo))
 
    
-    
     inpTodo.value = ''
 
     console.log(objPersonalMov)
@@ -81,3 +83,29 @@ function addLockalSt(){
     
     console.log(localStorage.getItem('keyLockalTodo'))
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
