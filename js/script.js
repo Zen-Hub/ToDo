@@ -16,7 +16,7 @@ let divDo = document.createElement('div')
 divDo.classList.add('divTodo')
 
 
-addLockalSt()
+// addLockalSt()
 
 let objPersonalMov = {
     count: "",
@@ -67,45 +67,45 @@ btnAddTodo.onclick = () => {
 
     localStorage.setItem('keyLockalTodo', JSON.stringify(objPersonalMov.todo))
 
-   
+    addTask()
+
     inpTodo.value = ''
 
     console.log(objPersonalMov)
 }
 
 
-function addLockalSt(){
-    if(localStorage.getItem('keyLockalTodo')){
-        divDo.innerHTML = localStorage.getItem('keyLockalTodo'),
-        container.append(divDo)
+// function addLockalSt(){
+//     if(localStorage.getItem('keyLockalTodo')){
+//         divDo.innerHTML = localStorage.getItem('keyLockalTodo'),
+//         container.append(divDo)
 
-    }
+//     }
     
-    console.log(localStorage.getItem('keyLockalTodo'))
+//     console.log(localStorage.getItem('keyLockalTodo'))
+// }
+
+let arrTasks = []
+
+function addTask(event){
+
+    event.preventDefault()
+
+    //take object task for input
+    const taskText = inpTodo.value
+
+    //this task in arr tasks
+    const newTask = {
+        id: Date.now(),
+        text: taskText,
+        done: false
+    }
+
+    //add object task in 
+    arrTasks.push(newTask)
+
+    console.log(arrTasks)
+
+    //make markuup for the task
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
