@@ -26,6 +26,13 @@ let objPersonalMov = {
     privat: false
 }
 
+//this task in arr tasks
+const newTask = {
+    id: Date.now(),
+    text: taskText,
+    done: false
+}
+
 
 //check inp + color
 inpTodo.addEventListener("click", () => {
@@ -56,7 +63,7 @@ btnAddTodo.onclick = () => {
     divDo = document.createElement('div')
     divDo.classList.add('divTodo')
     container.append(divDo)
-    
+
 
     divDo.innerHTML = inpTodo.value
 
@@ -68,6 +75,7 @@ btnAddTodo.onclick = () => {
     localStorage.setItem('keyLockalTodo', JSON.stringify(objPersonalMov.todo))
 
     addTask()
+    saveToLoskalStorage()
 
     inpTodo.value = ''
 
@@ -81,25 +89,24 @@ btnAddTodo.onclick = () => {
 //         container.append(divDo)
 
 //     }
-    
+
 //     console.log(localStorage.getItem('keyLockalTodo'))
 // }
 
 let arrTasks = []
 
-function addTask(event){
+if (localStorage.getItem('keyLoskal')) {
+    divDo.innerHTML = newTask.text
+}
 
-    event.preventDefault()
+function addTask(event) {
+
+    // event.preventDefault()
 
     //take object task for input
     const taskText = inpTodo.value
 
-    //this task in arr tasks
-    const newTask = {
-        id: Date.now(),
-        text: taskText,
-        done: false
-    }
+
 
     //add object task in 
     arrTasks.push(newTask)
@@ -108,4 +115,8 @@ function addTask(event){
 
     //make markuup for the task
 
+}
+//save LoskalStorage
+function saveToLoskalStorage() {
+    localStorage.setItem('keyLoskal', JSON.stringify(arrTasks))
 }
