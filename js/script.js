@@ -16,20 +16,10 @@ let divDo = document.createElement('div')
 divDo.classList.add('divTodo')
 
 
-// addLockalSt()
-
-let objPersonalMov = {
-    count: "",
-    todo: {},
-    actors: {},
-    view: [],
-    privat: false
-}
-
 //this task in arr tasks
 const newTask = {
     id: Date.now(),
-    text: taskText,
+    text: '',
     done: false
 }
 
@@ -68,18 +58,18 @@ btnAddTodo.onclick = () => {
     divDo.innerHTML = inpTodo.value
 
 
-    objPersonalMov.todo[numTodo] = inpTodo.value
+    newTask.text = inpTodo.value
 
-    numTodo++
+  
 
-    localStorage.setItem('keyLockalTodo', JSON.stringify(objPersonalMov.todo))
+   
 
     addTask()
     saveToLoskalStorage()
 
     inpTodo.value = ''
 
-    console.log(objPersonalMov)
+   
 }
 
 
@@ -95,7 +85,7 @@ btnAddTodo.onclick = () => {
 
 let arrTasks = []
 
-if (localStorage.getItem('keyLoskal')) {
+if (localStorage.getItem('keyLockal')) {
     divDo.innerHTML = newTask.text
 }
 
@@ -104,7 +94,7 @@ function addTask(event) {
     // event.preventDefault()
 
     //take object task for input
-    const taskText = inpTodo.value
+    
 
 
 
@@ -114,9 +104,8 @@ function addTask(event) {
     console.log(arrTasks)
 
     //make markuup for the task
-
 }
 //save LoskalStorage
 function saveToLoskalStorage() {
-    localStorage.setItem('keyLoskal', JSON.stringify(arrTasks))
+    localStorage.setItem('keyLockal', JSON.stringify(arrTasks))
 }
