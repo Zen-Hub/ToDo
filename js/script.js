@@ -2,26 +2,26 @@
 
 console.log("WORK")
 let container = document.querySelector('.todo__container')
-let divQsOne = document.querySelector('.questionOne')
-let divAnsversWatch = document.querySelector('.ansversWatch')
-let divQuestionarrView = document.querySelector('.questionView')
 
 let inpTodo = document.querySelector('.inpTodo')
 
-let btnBeginTodo = document.querySelector('.btnBeginTodo')
 let btnAddTodo = document.querySelector('.btnAddTodo')
 
-
+//create todo block
 let divDo = document.createElement('div')
 divDo.classList.add('divTodo')
 
 
 //this task in arr tasks
-const newTask = {
+const objNewTask = {
     id: Date.now(),
     text: '',
     done: false
 }
+
+console.log(objNewTask)
+
+getLockalStorage()
 
 
 //check inp + color
@@ -40,36 +40,25 @@ btnAddTodo.addEventListener("click", () => {
 })
 
 //add todo
-
-let numTodo = 1
-
-
 btnAddTodo.onclick = () => {
     if (inpTodo.value == '') {
 
         return
     }
 
-    divDo = document.createElement('div')
-    divDo.classList.add('divTodo')
-    container.append(divDo)
 
+    container.append(divDo)
 
     divDo.innerHTML = inpTodo.value
 
-
-    newTask.text = inpTodo.value
-
-  
-
-   
+    objNewTask.text = inpTodo.value
 
     addTask()
-    saveToLoskalStorage()
+    saveToLockalStorage()
+   
 
     inpTodo.value = ''
 
-   
 }
 
 
@@ -86,7 +75,7 @@ btnAddTodo.onclick = () => {
 let arrTasks = []
 
 if (localStorage.getItem('keyLockal')) {
-    divDo.innerHTML = newTask.text
+    divDo.innerHTML = objNewTask.text
 }
 
 function addTask(event) {
@@ -94,18 +83,23 @@ function addTask(event) {
     // event.preventDefault()
 
     //take object task for input
-    
-
-
 
     //add object task in 
-    arrTasks.push(newTask)
+    arrTasks.push(objNewTask)
 
     console.log(arrTasks)
 
     //make markuup for the task
 }
 //save LoskalStorage
-function saveToLoskalStorage() {
+function saveToLockalStorage() {
     localStorage.setItem('keyLockal', JSON.stringify(arrTasks))
+}
+
+function getLockalStorage() {
+    localStorage.getItem('keyLockal')
+    console.log(localStorage.getItem('keyLockal'))
+
+    container.append(divDo)
+    divDo.innerHTML = objNewTask.text
 }
