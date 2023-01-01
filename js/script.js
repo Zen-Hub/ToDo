@@ -7,6 +7,8 @@ let inpTodo = document.querySelector('.inpTodo')
 
 let btnAddTodo = document.querySelector('.btnAddTodo')
 
+let arrTasks = []
+
 //create todo block
 let divDo = document.createElement('div')
 divDo.classList.add('divTodo')
@@ -55,24 +57,13 @@ btnAddTodo.onclick = () => {
 
     addTask()
     saveToLockalStorage()
-   
+
 
     inpTodo.value = ''
 
 }
 
-
-// function addLockalSt(){
-//     if(localStorage.getItem('keyLockalTodo')){
-//         divDo.innerHTML = localStorage.getItem('keyLockalTodo'),
-//         container.append(divDo)
-
-//     }
-
-//     console.log(localStorage.getItem('keyLockalTodo'))
-// }
-
-let arrTasks = []
+console.log(arrTasks)
 
 if (localStorage.getItem('keyLockal')) {
     divDo.innerHTML = objNewTask.text
@@ -96,10 +87,49 @@ function saveToLockalStorage() {
     localStorage.setItem('keyLockal', JSON.stringify(arrTasks))
 }
 
+//get lockalStorage
 function getLockalStorage() {
     localStorage.getItem('keyLockal')
     console.log(localStorage.getItem('keyLockal'))
 
+    //retrieve data from storage as an array
+    arrTasks = JSON.parse(localStorage.getItem('keyLockal'))
+
     container.append(divDo)
     divDo.innerHTML = objNewTask.text
 }
+
+// arrTasks.forEach((task)=>{
+
+//     console.log(task)
+
+//     for(let i in task){
+//         console.log(i)
+//     }
+
+//     divDo.innerHTML = tas
+
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
