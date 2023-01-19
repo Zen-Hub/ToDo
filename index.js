@@ -4,12 +4,15 @@ buttonAdd.addEventListener('click', function () {
     //Текст который мы ввели в инпут
     const inpText = inp.value
 
-    //Выводим задачу на экран
+    //Формируем задачу для вывода на экран
     const taskHTML = `
-    <li class="all-Todo">
-        <span class="task-title">${inpText}</span>
-        <button class="taskDone"></button>
-        <button class="taskDelete"></button>
-    </li>
-    `
+        <li class="all-task">
+            <span class="task-text">${inpText}</span>
+            <button class="taskDone"></button>
+            <button class="taskDelete"></button>
+        </li>
+        `
+
+    //Выводим на экран
+    allTask.insertAdjacentHTML('beforeend',taskHTML)
 })
