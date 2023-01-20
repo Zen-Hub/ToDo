@@ -1,8 +1,13 @@
+let inpTask = document.querySelector('.inpTask');
+let buttonAdd = document.querySelector('.btnAdd');
+let liAllTask = document.querySelector('.liAllTask');
+
+
 buttonAdd.addEventListener('click', function () {
     console.log("click")
 
     //Текст который мы ввели в инпут
-    const inpText = inp.value
+    const inpText = inpTask.value
 
     //Формируем задачу для вывода на экран
     const taskHTML = `
@@ -14,5 +19,12 @@ buttonAdd.addEventListener('click', function () {
         `
 
     //Выводим на экран
-    allTask.insertAdjacentHTML('beforeend',taskHTML)
+    liAllTask.insertAdjacentHTML('beforeend',taskHTML)
+
+    //Очистим инпут
+    inpTask.value = ''
+
+    //вернули фокус в инпут
+    taskInput.focus()
+    
 })
