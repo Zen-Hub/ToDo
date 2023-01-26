@@ -45,6 +45,25 @@ function deleteTaskFun(event) {
 
   }
 }
+
+//отметим выполненные задачи
+ulTodo.addEventListener('click', doneTaskFun)
+
+function doneTaskFun(event) {
+
+  if (event.target.dataset.action == 'done') {
+    console.log('done')
+
+    //смотрим родителя с тегом <li> или его классом
+    const parent = event.target.closest('.liAllTask')
+    console.log(parent)
+    //удаляем родителя
+    parent.remove()
+
+  }
+}
+
+
 //insertAdjacentHTML вставит заданный элемент в HTML
 //focus() ставит фокус в заданную область
 //target.dataset находит по атрибуту
