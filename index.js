@@ -1,21 +1,32 @@
-let inpTask = document.querySelector('.inpTask');
-let buttonAdd = document.querySelector('.btnAdd');
+let inpTask = document.querySelector('.inpTask')
+let buttonAdd = document.querySelector('.btnAdd')
 let ulTodo = document.querySelector('.ulTodo')
 
+//сохраняем данные
+let arrToDo = []
+
 //ловим клик и запускаем функцию
-buttonAdd.addEventListener('click', AddTaskfunс)
+buttonAdd.addEventListener('click', AddTaskfun)
 
 //Добавили задачу
-function AddTaskfunс() {
+function AddTaskfun() {
   //Текст который мы ввели в инпут
   const inpText = inpTask.value
+
+  //объект для хранения новых задач
+  const newTaskObj = {
+    id: Date.now(),
+    text: inpText,
+    done: false
+  }
+
 
   //Формируем задачу для вывода на экран
   const taskHTML = `
       <li class="liAllTask">
           <div class="taskText">${inpText}</div>
-          <button class="btnDone btnstyle" data-action = 'done'>done</button>
-          <button class="btnDelete btnstyle" data-action = 'delete'>delete</button>
+          <button class="btnDone btnLi " data-action = 'done'>done</button>
+          <button class="btnDelete btnLi " data-action = 'delete'>delete</button>
       </li>
       `
 
@@ -42,6 +53,7 @@ function deleteTaskFun(event) {
     console.log(parent)
     //удаляем родителя
     parent.remove()
+    
 
   }
 }
@@ -57,11 +69,29 @@ function doneTaskFun(event) {
     //смотрим родителя с тегом <li> или его классом
     const parent = event.target.closest('.liAllTask')
     console.log(parent)
-    //удаляем родителя
-    parent.remove()
+    
+    //добавляем класс который изменит вид <li>
+    parent.classList.toggle('done')
 
   }
 }
+
+//сохраняем данные
+
+
+
+// let toDoObj = {
+//   'keyTodo': 
+// }
+
+function localStFun(){
+
+  let arrr = arrToDo.push()
+
+  // localStorage('keyTodo', arrTodo)
+
+}
+
 
 
 //insertAdjacentHTML вставит заданный элемент в HTML
@@ -69,3 +99,6 @@ function doneTaskFun(event) {
 //target.dataset находит по атрибуту
 //closest ищет родителя по классу или тегу
 //remove() удалит тег 
+//localStorage('key',data)  храним в браузере данные
+//localStorage.setItem('key',data) - сохранили данные в браузере
+//localStorage.getItem('key',data) - вытащили данные из браузера
