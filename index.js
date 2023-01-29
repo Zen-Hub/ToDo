@@ -3,13 +3,14 @@ let buttonAdd = document.querySelector('.btnAdd')
 let ulTodo = document.querySelector('.ulTodo')
 
 //сохраняем данные
-let arrToDo = []
+let arrTasks = []
 
 //ловим клик и запускаем функцию
 buttonAdd.addEventListener('click', AddTaskfun)
 
 //Добавили задачу
 function AddTaskfun() {
+
   //Текст который мы ввели в инпут
   const inpText = inpTask.value
 
@@ -20,11 +21,15 @@ function AddTaskfun() {
     done: false
   }
 
+  //Добавляем задачи в массив
+  arrTasks.push(newTaskObj)
+
+  console.log(arrTasks)
 
   //Формируем задачу для вывода на экран
   const taskHTML = `
-      <li class="liAllTask">
-          <div class="taskText">${inpText}</div>
+      <li id = "${newTaskObj.id}" class="liAllTask">
+          <div class="taskText">${newTaskObj.text}</div>
           <button class="btnDone btnLi " data-action = 'done'>done</button>
           <button class="btnDelete btnLi " data-action = 'delete'>delete</button>
       </li>
