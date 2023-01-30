@@ -26,9 +26,12 @@ function AddTaskfun() {
 
   console.log(arrTasks)
 
+  //Добавляем класс если задача выполнена
+  const done = newTaskObj.done ? 'done' : ''
+
   //Формируем задачу для вывода на экран
   const taskHTML = `
-      <li id = "${newTaskObj.id}" class="liAllTask">
+      <li id = "${newTaskObj.id}" class="liAllTask ${done}">
           <div class="taskText">${newTaskObj.text}</div>
           <button class="btnDone btnLi " data-action = 'done'>done</button>
           <button class="btnDelete btnLi " data-action = 'delete'>delete</button>
@@ -50,12 +53,21 @@ ulTodo.addEventListener('click', deleteTaskFun)
 
 function deleteTaskFun(event) {
 
+  //находим по атрибуту
   if (event.target.dataset.action == 'delete') {
-    console.log('DEL')
+    
 
     //смотрим родителя с тегом <li> или его классом
     const parent = event.target.closest('.liAllTask')
-    console.log(parent)
+
+    //находим задачу по id
+    const parentId = parent.id
+
+
+    //находим задачу в массиве по индексу
+    
+
+   
     //удаляем родителя
     parent.remove()
     
@@ -64,22 +76,22 @@ function deleteTaskFun(event) {
 }
 
 //отметим выполненные задачи
-ulTodo.addEventListener('click', doneTaskFun)
+// ulTodo.addEventListener('click', doneTaskFun)
 
-function doneTaskFun(event) {
+// function doneTaskFun(event) {
 
-  if (event.target.dataset.action == 'done') {
-    console.log('done')
+//   if (event.target.dataset.action == 'done') {
+//     console.log('done')
 
-    //смотрим родителя с тегом <li> или его классом
-    const parent = event.target.closest('.liAllTask')
-    console.log(parent)
+//     //смотрим родителя с тегом <li> или его классом
+//     const parent = event.target.closest('.liAllTask')
+//     console.log(parent)
     
-    //добавляем класс который изменит вид <li>
-    parent.classList.toggle('done')
+//     //добавляем класс который изменит вид <li>
+//     parent.classList.toggle('done')
 
-  }
-}
+//   }
+// }
 
 //сохраняем данные
 
