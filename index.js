@@ -24,8 +24,6 @@ function AddTaskfun() {
   //Добавляем задачи в массив
   arrTasks.push(newTaskObj)
 
-  console.log(arrTasks)
-
   //Добавляем класс если задача выполнена
   const done = newTaskObj.done ? 'done' : ''
 
@@ -60,12 +58,20 @@ function deleteTaskFun(event) {
     //смотрим родителя с тегом <li> или его классом
     const parent = event.target.closest('.liAllTask')
 
-    //находим задачу по id
+    // id задачи
     const parentId = parent.id
 
 
     //находим задачу в массиве по индексу
-    
+    arrTasks.findIndex(function(task){
+
+      //видим клик по задаче  которую нужно удалить
+      console.log(task)
+
+      //удаляем задачу
+
+
+    })
 
    
     //удаляем родителя
