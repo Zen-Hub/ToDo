@@ -62,14 +62,16 @@ function deleteTaskFun(event) {
     const parentId = parent.id
 
 
-    //находим задачу в массиве по индексу
+    //смотрим все задачи в массиве -- > findIndex подсветил все задачи
     arrTasks.findIndex(function(task){
 
-      //видим клик по задаче  которую нужно удалить
+      //findIndex подсветил все задачи 
       console.log(task)
 
       //удаляем задачу
-
+      if(task.id === id){
+        return true
+      }
 
     })
 
@@ -80,6 +82,7 @@ function deleteTaskFun(event) {
 
   }
 }
+
 
 //отметим выполненные задачи
 // ulTodo.addEventListener('click', doneTaskFun)
@@ -125,3 +128,13 @@ function localStFun(){
 //localStorage('key',data)  храним в браузере данные
 //localStorage.setItem('key',data) - сохранили данные в браузере
 //localStorage.getItem('key',data) - вытащили данные из браузера
+//findIndex(function(task) - запускает функцию для каждого элемента массива и по условию находит нужный
+//условие обязательно
+
+
+
+
+
+
+
+
