@@ -51,33 +51,39 @@ ulTodo.addEventListener('click', deleteTaskFun)
 
 function deleteTaskFun(event) {
 
-  //находим по атрибуту
+  //находим по атрибуту где был клик
   if (event.target.dataset.action == 'delete') {
     
 
-    //смотрим родителя с тегом <li> или его классом
-    const parent = event.target.closest('.liAllTask')
+    //смотрим родителя с тегом <li> или его классом по которому был клик
+    const parentClk = event.target.closest('.liAllTask')
 
-    // id задачи
-    const parentId = parent.id
+    // id задачи по которой был клик - id это строка --> переводим в число
+    const parentClkId = Number(parentClk.id) 
+    console.log(parentClkId)
 
 
     //смотрим все задачи в массиве -- > findIndex подсветил все задачи
-    arrTasks.findIndex(function(task){
+    const indexForDel = arrTasks.findIndex(function(task){
 
       //findIndex подсветил все задачи 
       console.log(task)
 
-      //удаляем задачу
-      if(task.id === id){
+      //
+      if(task.id === parentClkId){
         return true
       }
 
     })
 
-   
+    console.log(indexForDel) //номер удаляемого <li> в массиве --> 0 1 2 3 ...
+    //вырезаем заданный тег с задачей из массива
+    arrTasks.splice(indexForDel,1)
+
+    console.log(arrTasks)
+        
     //удаляем родителя
-    parent.remove()
+    parentClk.remove()
     
 
   }
@@ -129,7 +135,12 @@ function localStFun(){
 //localStorage.setItem('key',data) - сохранили данные в браузере
 //localStorage.getItem('key',data) - вытащили данные из браузера
 //findIndex(function(task) - запускает функцию для каждого элемента массива и по условию находит нужный
-//условие обязательно
+  //условие обязательно
+//splice  Умеет всё: добавлять, удалять и заменять элементы
+  //arr.splice(index[, deleteCount, elem1, ..., elemN])
+  //Он начинает с позиции index, удаляет deleteCount элементов и вставляет elem1, ..., elemN на их место. 
+  //Возвращает массив из удалённых элементов.
+
 
 
 
