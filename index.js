@@ -76,8 +76,12 @@ function deleteTaskFun(event) {
 
     })
 
-    //второй метод
-    arrTasks = arrTasks.filter()
+    //второй метод - filter веренет новый массив отфильтрованных элементов
+    // arrTasks = arrTasks.filter(function(task){
+    //   if(task.id === parentClkId ){
+    //     return false
+    //   }else{return true} //добавит в массив
+    // })
 
 
     console.log(indexForDel) //номер удаляемого <li> в массиве --> 0 1 2 3 ...
@@ -95,38 +99,32 @@ function deleteTaskFun(event) {
 
 
 //отметим выполненные задачи
-// ulTodo.addEventListener('click', doneTaskFun)
+ulTodo.addEventListener('click', doneTaskFun)
 
-// function doneTaskFun(event) {
+function doneTaskFun(event) {
 
-//   if (event.target.dataset.action == 'done') {
-//     console.log('done')
+  if (event.target.dataset.action == 'done') {
+    console.log('done')
 
-//     //смотрим родителя с тегом <li> или его классом
-//     const parent = event.target.closest('.liAllTask')
-//     console.log(parent)
+    //смотрим родителя с тегом <li> или его классом
+    const parent = event.target.closest('.liAllTask')
+    console.log(parent)
+
+    //находим id задачи
+    const parentId  = parent.id
     
-//     //добавляем класс который изменит вид <li>
-//     parent.classList.toggle('done')
+    //добавляем класс который изменит вид <li>
+    parent.classList.toggle('done')
 
-//   }
-// }
+  }
+}
 
 //сохраняем данные
 
 
 
-// let toDoObj = {
-//   'keyTodo': 
-// }
 
-function localStFun(){
 
-  let arrr = arrToDo.push()
-
-  // localStorage('keyTodo', arrTodo)
-
-}
 
 
 
@@ -142,7 +140,8 @@ function localStFun(){
   //условие обязательно
 //splice  Умеет всё: добавлять, удалять и заменять элементы
   //arr.splice(index[, deleteCount, elem1, ..., elemN])
-  //Он начинает с позиции index, удаляет deleteCount элементов и вставляет elem1, ..., elemN на их место. 
+  //Он начинает с позиции index, удаляет deleteCount элементов и вставляет elem1, ..., 
+  //elemN на их место. 
   //Возвращает новый массив из удалённых элементов.
 //filter создаёт новый массив со всеми элементами, прошедшими проверку, задаваемую 
 //в передаваемой функции
