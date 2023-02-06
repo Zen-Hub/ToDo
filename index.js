@@ -110,9 +110,19 @@ function doneTaskFun(event) {
     const parent = event.target.closest('.liAllTask')
     console.log(parent)
 
-    //находим id задачи
-    const parentId  = parent.id
+    //находим id задачи -- > то есть всего тега <li> по которому кликнули
+    const parentClkId  = Number(parent.id)
     
+    const taskDone = arrTasks.find(function(task){
+      if(task.id === parentClkId){
+       return true
+      }
+    })
+
+    console.log(taskDone)
+
+    taskDone.done = !taskDone.done
+
     //добавляем класс который изменит вид <li>
     parent.classList.toggle('done')
 
@@ -145,6 +155,14 @@ function doneTaskFun(event) {
   //Возвращает новый массив из удалённых элементов.
 //filter создаёт новый массив со всеми элементами, прошедшими проверку, задаваемую 
 //в передаваемой функции
+//find возвращает значение первого найденного в массиве элемента, 
+//которое удовлетворяет условию переданному в callback функции
+
+
+
+
+
+
 
 
 
