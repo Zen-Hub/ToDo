@@ -24,6 +24,9 @@ function AddTaskfun() {
   //Добавляем задачи в массив
   arrTasks.push(newTaskObj)
 
+   //сохраняем в LockalStorage
+   setLockalSt()
+
   //Добавляем класс если задача выполнена
   const done = newTaskObj.done ? 'done' : ''
 
@@ -36,14 +39,20 @@ function AddTaskfun() {
       </li>
       `
 
+     
+
   //Выводим на экран(вставляем в HTML)
   ulTodo.insertAdjacentHTML('beforeend', taskHTML)
+
+  //
 
   //Очистим инпут
   inpTask.value = ''
 
   //вернули фокус в инпут
   inpTask.focus()
+
+
 }
 
 //Удалили задачу 
@@ -64,33 +73,38 @@ function deleteTaskFun(event) {
 
 
     //смотрим все задачи в массиве -- > findIndex подсветил все задачи
-    const indexForDel = arrTasks.findIndex(function(task){
+    // const indexForDel = arrTasks.findIndex(function(task){
 
-      //findIndex подсветил все задачи 
-      console.log(task)
+    //   //findIndex подсветил все задачи 
+    //   console.log(task)
 
-      //сравниваем каждую задачу с той по которой был клик
-      if(task.id === parentClkId){
-        return true
-      }
+    //   //сравниваем каждую задачу с той по которой был клик
+    //   if(task.id === parentClkId){
+    //     return true
+    //   }
 
-    })
-
-    //второй метод - filter веренет новый массив отфильтрованных элементов
-    // arrTasks = arrTasks.filter(function(task){
-    //   if(task.id === parentClkId ){
-    //     return false
-    //   }else{return true} //добавит в массив
     // })
 
+    // console.log(indexForDel) //номер удаляемого <li> в массиве --> 0 1 2 3 ...
+    // //вырезаем заданный тег с задачей из массива
+    // arrTasks.splice(indexForDel,1)
 
-    console.log(indexForDel) //номер удаляемого <li> в массиве --> 0 1 2 3 ...
-    //вырезаем заданный тег с задачей из массива
-    arrTasks.splice(indexForDel,1)
+    //второй метод - filter веренет новый массив отфильтрованных элементов
+    arrTasks = arrTasks.filter(function(task){
+      if(task.id === parentClkId ){
+        return false
+      }else{return true} //добавит в массив
+    })
+
+     //сохраняем в LockalStorage
+     setLockalSt()
+
+
+ 
 
     console.log(arrTasks)
         
-    //удаляем родителя
+    //удаляем родителя из разметки
     parentClk.remove()
     
 
@@ -131,7 +145,13 @@ function doneTaskFun(event) {
 
 //сохраняем данные
 
+function setLockalSt(){
+  localStorage.setItem('keyLocSet',JSON.stringify(arrTasks))
+}
 
+// function getLockalSt(){
+//   localStorage.getItem('keyLocSet',JSON.stringify(arrTasks))
+// }
 
 
 
@@ -157,6 +177,11 @@ function doneTaskFun(event) {
 //в передаваемой функции
 //find возвращает значение первого найденного в массиве элемента, 
 //которое удовлетворяет условию переданному в callback функции
+
+
+
+
+
 
 
 
