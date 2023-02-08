@@ -5,6 +5,16 @@ let ulTodo = document.querySelector('.ulTodo')
 //сохраняем данные
 let arrTasks = []
 
+
+//смотрим LockalStorage по ключу -->  если не пустой достаём данные
+
+  if(localStorage.getItem('keyLocSet'))
+
+  
+  
+
+
+
 //ловим клик и запускаем функцию
 buttonAdd.addEventListener('click', AddTaskfun)
 
@@ -89,8 +99,8 @@ function deleteTaskFun(event) {
     // //вырезаем заданный тег с задачей из массива
     // arrTasks.splice(indexForDel,1)
 
-    //второй метод - filter веренет новый массив отфильтрованных элементов
-    arrTasks = arrTasks.filter(function(task){
+    //второй метод - filter веренет новый массив кроме отфильтрованных элементов
+   arrTasks = arrTasks.filter(function(task){
       if(task.id === parentClkId ){
         return false
       }else{return true} //добавит в массив
@@ -102,7 +112,7 @@ function deleteTaskFun(event) {
 
  
 
-    console.log(arrTasks)
+    console.log(arrTasksNew)
         
     //удаляем родителя из разметки
     parentClk.remove()
@@ -137,6 +147,9 @@ function doneTaskFun(event) {
 
     taskDone.done = !taskDone.done
 
+     //сохраняем в LockalStorage
+     setLockalSt()
+
     //добавляем класс который изменит вид <li>
     parent.classList.toggle('done')
 
@@ -149,9 +162,6 @@ function setLockalSt(){
   localStorage.setItem('keyLocSet',JSON.stringify(arrTasks))
 }
 
-// function getLockalSt(){
-//   localStorage.getItem('keyLocSet',JSON.stringify(arrTasks))
-// }
 
 
 
@@ -177,6 +187,7 @@ function setLockalSt(){
 //в передаваемой функции
 //find возвращает значение первого найденного в массиве элемента, 
 //которое удовлетворяет условию переданному в callback функции
+
 
 
 
