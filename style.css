@@ -50,7 +50,7 @@ h1 {
     width: 376px;
     padding: 10px;
     margin: 25px;
-    border: 1px solid #2F4454;
+    border: 1px solid #e9700e;
     border-radius: 5px;
     box-shadow: 0 2px 10px 0 #074b83;
 
@@ -68,6 +68,7 @@ h1 {
     padding: 5px;
     min-width: 200px;
     margin: 10px;
+    border: 1px solid #0ee9a7;
     border-radius: 5px;
     box-shadow: 0 2px 10px 0 #074b83;
 
@@ -79,24 +80,26 @@ h1 {
     align-items: center;
     min-width: 50px;
     margin: 5px;
-    
-   
-    
+}
+
+.done{
+    border: 1px solid #2F4454;
+    color:#2F4454;
+    transition: all 0.1s ease-out;
 }
 
 .btnstyle {
-    
+
     border: 1px solid #2F4454;
-   
+    margin-bottom: 20px;
     cursor: pointer;
     border-radius: 5px;
-    
     color: #4D6D9A;
 }
 
 .btnstyle:hover {
-    transition: all 0.5s;
-    background-color: #86B3D1;
+    transition: all 0.2s;
+    box-shadow: 0 2px 10px 0 #074b83;
 
 }
 
@@ -118,6 +121,9 @@ h1 {
     min-width: 16px;
 }
 
+.btnLi{
+    margin: 5px;
+}
 
 
 /*Отменяет маркеры для списка*/
