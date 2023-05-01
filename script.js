@@ -1,6 +1,6 @@
-let inpTaskIwant = document.querySelector(".inpTask");
+// let inpTaskIwant = document.querySelector(".inpTask");
 let buttonAdd = document.querySelector(".btnAdd");
-let ulTodoIwant = document.querySelector(".ulTodo");
+// let ulTodoIwant = document.querySelector(".ulTodo");
 
 let inpTask = document.querySelector(".inpTask");
 // let buttonAdd = document.querySelectorAll(".btnAdd");
@@ -92,7 +92,7 @@ function deleteTaskFun(event) {
     // arrTasks.splice(indexForDel,1)
 
     //второй метод - filter веренет новый массив кроме отфильтрованных элементов
-    arrTasks = arrTasks.filter(function (task) {
+    arrTasksIwant = arrTasksIwant.filter(function (task) {
       if (task.id === parentClkId) {
         return false;
       } else {
@@ -124,7 +124,7 @@ function doneTaskFun(event) {
     //находим id задачи -- > то есть всего тега <li> по которому кликнули
     const parentClkId = Number(parent.id);
 
-    const taskDone = arrTasks.find(function (task) {
+    const taskDone = arrTasksIwant.find(function (task) {
       if (task.id === parentClkId) {
         return true;
       }
