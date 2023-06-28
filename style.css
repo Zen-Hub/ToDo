@@ -153,26 +153,32 @@ body {
 
 /* Для ширины экрана менее или равной 768 пикселей */
 @media screen and (max-width: 768px) {
-    .container {
-        display: grid;
-        justify-content: center;
-        align-content: center;
+     .container {
+       
         min-width: 50px;
         min-height: 100px;
         margin: 5px;
         padding: 30px;
-        background-color: #1F2833;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px 0 #074b83;
+       
     }
 
     .input-blosk{
-        display: grid;
-        align-content: start;
+        
+        align-content: center;
         max-width: 360px;
         min-height: 100px;
         margin-bottom: 25px;
     }
+    
+
+
+  }
+  
+  /* Для ширины экрана более 768 пикселей */
+  @media screen and (min-width: 769px) {
+    /* Ваши стили для десктопного дизайна */
+  }
+
     
 
 
