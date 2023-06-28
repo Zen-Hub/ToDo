@@ -7,38 +7,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="style.css" rel="stylesheet" />
   <link href="normalize.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300;1,400&family=Roboto:ital@0;1&display=swap"
+    rel="stylesheet">
   <title>ToDo</title>
 </head>
 
 <body>
   <div class="container">
-    <div class="todo_list iwant">
-      <h1>ToDo list</h1>
 
-      <div class="create_new_todo">
-        <input type="text" class="inpTask" placeholder="Task" />
-      </div>
-
-      <button class="btnAdd btnstyle">add</button>
-
-      <ul class="ulTodo">
-
-      </ul>
+    <div class="input-blosk">
+      <input id="task-input" class="input" type="text" placeholder="Введите задачу">
+      <button id="add-task-button" class="button">push</button>
     </div>
 
-    <div class="todo_list need">
-      <h1>ToDo list</h1>
-
-      <div class="create_new_todo">
-        <input type="text" class="inpTask" placeholder="Task" />
-      </div>
-
-      <button class="btnAdd btnstyle">add</button>
-
-      <ul class="ulTodo">
-
-      </ul>
+    <div id="task-list">
+      <!-- Здесь формируется все задачи -->
     </div>
+
   </div>
 
   <script src="script.js"></script>
