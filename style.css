@@ -1,4 +1,6 @@
 body {
+    display: grid;
+    justify-content: center;
     background-color: #1F2833;
     color: #86B3D1;
     font-family: sans-serif;
@@ -7,62 +9,85 @@ body {
 }
 
 /*свойства width и height задавали размеры не содержимого, а размеры блока*/
+/* <-----------------------------------------> */
 
 .container {
     display: grid;
-    grid-auto-flow: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-content: center;
+    width: 800px;
     min-height: 600px;
-    miin-width: 1300px;
-    margin: 50px;
-    box-shadow: 0 2px 10px 0 #074b83;
-}
-
-
-
-/* <-----------------------------------------> */
-
-.todo_list  {
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    width: 500px;
     margin: 25px;
     padding: 30px;
     background-color: #1F2833;
     border-radius: 10px;
-
-    -webkit-box-shadow: 0 2px 10px 0 #074b83;
-    /*тень с поддержкой старых браузеров*/
     box-shadow: 0 2px 10px 0 #074b83;
 }
 
+.input-blosk{
+    display: grid;
+    align-content: start;
+    width: 600px;
+    min-height: 600px;
+}
 
-h1 {
+
+.input {
+    min-width: 100px;
+    height: 100px;
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid #ffd700;
+    border-radius: 5px;
+    color: #73b4da;
+}
+.input:hover{
+    transition: all 0.1s ease-out;
+    box-shadow: 0 2px 10px 0 #ffd700;
+}
+
+
+.button {
+  
+    width: 100px;
+    height: 50px;
+    margin-bottom: 20px;
+    margin: 0 auto;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid #ffd700;
+    border-radius: 5px;
+    color: #148a8a;
+}
+
+.button:hover{
+    transition: all 0.1s ease-out;
+    box-shadow: 0 2px 10px 0 #ffd700;
+    color: #ffd700;
+}
+
+
+/* h1 {
     text-align: center;
     margin-top: 0;
     margin-bottom: 20px;
     color: #86B3D1;
     font-size: 30px;
+} */
+
+
+
+
+.input:hover{
+    transition: all 0.1s ease-out;
+    box-shadow: 0 2px 10px 0 #eed06e;
 }
 
-
-.inpTask {
-    width: 376px;
-    padding: 10px;
-    margin: 25px;
-    border: 1px solid #e9700e;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px 0 #074b83;
-
-
-}
-
-.ulTodo {
+.task-list {
     display: grid;
 }
 
-.liAllTask {
+.task-item{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -89,23 +114,16 @@ h1 {
     transition: all 0.1s ease-out;
 }
 
-.btnstyle {
 
-    border: 1px solid #2F4454;
-    margin-bottom: 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    color: #4D6D9A;
-}
 
 .btnstyle:hover {
     transition: all 0.2s;
-    box-shadow: 0 2px 10px 0 #074b83;
+    box-shadow: 0 2px 10px 0  #0ee9a7;
 
 }
 
 .btnAdd {
-    margin-top: 15px;
+    margin-top: 10px;
     border: 1px solid #2F4454;
     width: 376px;
     padding: 10px;
@@ -125,6 +143,5 @@ h1 {
 .btnLi{
     margin: 5px;
 }
-
 
 
