@@ -173,6 +173,20 @@ body {
 
 
   }
+/* подбрасываем монетку */
+.coin-flip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#result {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+
   
   /* Для ширины экрана более 768 пикселей */
   @media screen and (min-width: 769px) {
