@@ -112,7 +112,7 @@ function loadTasks() {
 loadTasks();
 
 //--------------------подбрасываем монетку------------------------------------
-let yesno = document.querySelector(.'yesno')
+let yesno = document.querySelector('.yesno')
 // Определяем функцию для подбрасывания монетки
 function flipCoin() {
   // Генерируем случайное число 0 или 1
