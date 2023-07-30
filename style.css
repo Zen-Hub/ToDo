@@ -147,6 +147,31 @@ body {
     margin: 5px;
 }
 
+/* подбрасываем монетку */
+.coin-flip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #0ee9a7;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px 0 #074b83;
+    
+}
+
+.yesno{
+    
+    border: 1px solid #0ee9a7;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px 0 #074b83;
+}
+
+#result {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+
 
 
 /* Адаптив для мобильного */
@@ -173,18 +198,6 @@ body {
 
 
   }
-/* подбрасываем монетку */
-.coin-flip {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#result {
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 20px;
-}
 
 
   
