@@ -112,6 +112,7 @@ function loadTasks() {
 loadTasks();
 
 //--------------------подбрасываем монетку------------------------------------
+let yesno = document.querySelector(.'yesno')
 // Определяем функцию для подбрасывания монетки
 function flipCoin() {
   // Генерируем случайное число 0 или 1
@@ -119,10 +120,12 @@ function flipCoin() {
   
   // Если число 0, то монетка выпала орлом
   if (randomNum === 0) {
-    console.log("Орёл!");
+     yesno.innerHTML(.'yesno') = "ДА"
+     console.log("Орёл!");
   }
   // Если число 1, то монетка выпала решкой
   else {
+    yesno.innerHTML(.'yesno') = "НЕТ";
     console.log("Решка!");
   }
 }
