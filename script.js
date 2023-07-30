@@ -120,12 +120,12 @@ function flipCoin() {
   
   // Если число 0, то монетка выпала орлом
   if (randomNum === 0) {
-     yesno.innerHTML('.yesno') = "ДА"
+     yesno.innerHTML = 'ДА'
      console.log("Орёл!");
   }
   // Если число 1, то монетка выпала решкой
   else {
-    yesno.innerHTML('yesno') = "НЕТ";
+   yesno.innerHTML = 'НЕТ'
     console.log("Решка!");
   }
 }
